@@ -3,18 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>리히트호펜 백작가 : 지침서의 비밀</title>
+    <title>지침서</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Noto+Serif+KR:wght@400;700&display=swap" rel="stylesheet">
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     fontFamily: {
-                        sans: ['"Noto Sans KR"', 'sans-serif'],
-                        serif: ['"Noto Serif KR"', 'serif'],
+                        sans: ['"Pretendard"', 'sans-serif'],
+                        serif: ['ui-serif', 'Georgia', 'Cambria', '"Times New Roman"', 'Times', 'serif'],
+                        batang: ['"Iropke Batang"', 'serif'],
+                        /* [추가됨] 캐릭터 이름 전용 르네상스 폰트 설정 */
+                        renaissance: ['"OgRenaissanceSecret"', 'serif'],
                     },
                     colors: {
                         blood: {
@@ -28,6 +30,73 @@
         }
     </script>
     <style>
+        /* 이롭게 바탕체 import */
+        @import url('https://cdn.jsdelivr.net/font-iropke-batang/1.2/font-iropke-batang.css');
+
+        /* 프리텐다드 폰트 굵기별 설정 */
+        @font-face {
+            font-family: 'Pretendard';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Thin.woff2') format('woff2');
+            font-weight: 100;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'Pretendard';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-ExtraLight.woff2') format('woff2');
+            font-weight: 200;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'Pretendard';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Light.woff2') format('woff2');
+            font-weight: 300;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'Pretendard';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Regular.woff2') format('woff2');
+            font-weight: 400;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'Pretendard';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Medium.woff2') format('woff2');
+            font-weight: 500;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'Pretendard';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-SemiBold.woff2') format('woff2');
+            font-weight: 600;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'Pretendard';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Bold.woff2') format('woff2');
+            font-weight: 700;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'Pretendard';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-ExtraBold.woff2') format('woff2');
+            font-weight: 800;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'Pretendard';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Black.woff2') format('woff2');
+            font-weight: 900;
+            font-display: swap;
+        }
+
+        /* [추가됨] 커스텀 폰트 (OG 르네상스 비밀) 재추가 */
+        @font-face {
+            font-family: 'OgRenaissanceSecret';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2312-1@1.1/OG_Renaissance_Secret-Rg.woff2') format('woff2');
+            font-weight: normal;
+            font-display: swap;
+        }
+
         /* 스크롤바 커스텀 */
         ::-webkit-scrollbar { width: 8px; }
         ::-webkit-scrollbar-track { background: #09090b; }
@@ -42,16 +111,20 @@
 <body class="bg-zinc-950 text-gray-300 font-sans antialiased selection:bg-blood-700 selection:text-white">
 
     <header class="relative w-full h-[60vh] md:h-[70vh] flex items-center justify-center overflow-hidden">
-        <img src="https://placehold.co/1920x1080/09090b/8a0303?text=Lichthofen+Mansion" alt="저택 배경" class="absolute inset-0 w-full h-full object-cover opacity-40">
+        <img src="https://raw.githubusercontent.com/burnttoast-p/gbook/refs/heads/main/저택.png" alt="저택 배경" class="absolute inset-0 w-full h-full object-cover opacity-40">
         <div class="absolute inset-0 gradient-overlay"></div>
         
         <div class="relative z-10 text-center px-4 max-w-4xl mx-auto">
-            <p class="text-blood-500 font-serif tracking-widest mb-4 text-sm md:text-base">자정이 넘었다면, 절대 밖으로 나오지 마세요.</p>
-            <h1 class="text-4xl md:text-6xl font-serif text-white mb-6 gothic-text tracking-tight">리히트호펜 백작가</h1>
+            <img src="https://raw.githubusercontent.com/burnttoast-p/gbook/refs/heads/main/폰트.png" alt="지침서 타이틀 이미지" class="mt-10 md:mt-16 mb-6 mx-auto block w-64 md:w-[28rem] h-auto">
             <p class="text-lg md:text-xl text-gray-400 font-light leading-relaxed">
-                장미와 유리 공예로 찬란하게 빛나는 제국의 명문가.<br class="hidden md:block">
-                하지만 그 화려한 문 뒤에는 끔찍한 소문과 지켜야만 하는 '지침서'가 존재합니다.
+                장미와 유리 공예로 찬란하게 빛나는 제국의 명문가, 리히트호펜 백작가.<br class="hidden md:block">
+                하지만 그 화려한 문 뒤에는…….
             </p>
+            
+            <a href="https://youtu.be/tlQsnMZj3t4?si=q3KOLKQ1plDsmGTZ" target="_blank" class="inline-flex items-center gap-2 mt-8 px-6 py-2 bg-zinc-900/80 border border-zinc-800 rounded-full text-sm text-gray-400 hover:text-white hover:border-blood-700 transition-colors backdrop-blur-sm">
+                <svg class="w-4 h-4 text-blood-500" fill="currentColor" viewBox="0 0 20 20"><path d="M18 3a1 1 0 00-1.196-.98l-10 2A1 1 0 006 5v9.114A4.369 4.369 0 005 14c-1.657 0-3 .895-3 2s1.343 2 3 2 3-.895 3-2V7.28l9-1.8v5.634A4.369 4.369 0 0016 11c-1.657 0-3 .895-3 2s1.343 2 3 2 3-.895 3-2V3z"/></svg>
+                BGM - The Point of No Return
+            </a>
         </div>
     </header>
 
@@ -59,105 +132,164 @@
 
         <section class="flex flex-col md:flex-row gap-12 items-center">
             <div class="w-full md:w-1/2 space-y-6">
-                <h2 class="text-3xl text-white font-serif border-b border-zinc-800 pb-4">기묘한 저택의 규칙</h2>
+                <h2 class="text-3xl text-white font-serif border-b border-zinc-800 pb-4">지침서</h2>
                 <p class="text-gray-400 leading-relaxed text-justify">
-                    리히트호펜 가문의 사용인들 사이에서 은밀하게 맴도는 소문. 살아남기 위해서는 반드시 이 기묘한 규칙을 지켜야 합니다. 당신은 이 핏빛 장미정원에서 무사히 아침을 맞이할 수 있을까요?
+                    리히트호펜 가문을 모시는 사용인들 사이에서 은밀하게 맴도는 소문. 살아남기 위해서는 반드시 이 기이한 규칙을 지켜야 합니다. 당신은 저택에서 무사히 아침을 맞이할 수 있을까요?
                 </p>
                 <div class="bg-zinc-900 border border-zinc-800 p-6 rounded-lg shadow-2xl relative overflow-hidden">
                     <div class="absolute top-0 left-0 w-1 h-full bg-blood-700"></div>
-                    <h3 class="text-blood-500 font-serif text-xl mb-4">친애하는 방문객을 위한 지침서</h3>
-                    <ul class="space-y-3 text-sm md:text-base text-gray-300 font-serif">
+                    <h3 class="text-blood-500 font-batang text-xl mb-4">친애하는 ■■■을 위한 지침서</h3>
+                    <ul class="space-y-3 text-sm md:text-base text-gray-300 font-batang">
                         <li class="flex gap-2"><span class="text-blood-500">I.</span> 자정이 넘었다면 오전 4시까지 밖으로 나오지 마세요.</li>
                         <li class="flex gap-2"><span class="text-blood-500">II.</span> 사랑하는 이가 있다면 그 이름을 적색으로 적지 마세요.</li>
                         <li class="flex gap-2"><span class="text-blood-500">III.</span> 매달 5일에는 까마귀가 웁니다.</li>
                         <li class="flex gap-2"><span class="text-blood-500">IV.</span> 그의 눈을 똑바로 바라보지 마세요.</li>
                         <li class="flex gap-2"><span class="text-blood-500">V.</span> 망자의 이름을 부르지 마세요.</li>
-                        <li class="flex gap-2 text-white font-bold mt-4"><span class="text-blood-500">VI.</span> 살아남으세요.</li>
+                        <li class="flex gap-2 text-white font-bold mt-4"><span class="text-blood-500">VI.</span> <s>살아남으세요.</s></li>
                     </ul>
                 </div>
             </div>
-            <div class="w-full md:w-1/2 relative">
-                <img src="https://placehold.co/800x1000/18181b/3f3f46?text=The+Secret+Rulebook" alt="지침서 삽화" class="w-full rounded-lg shadow-2xl opacity-80 hover:opacity-100 transition duration-500 grayscale hover:grayscale-0">
+            
+            <div class="w-full md:w-1/2 relative group">
+                <img src="https://raw.githubusercontent.com/burnttoast-p/gbook/refs/heads/main/액자.png" alt="지침서 기본 삽화" class="w-full rounded-lg shadow-2xl opacity-80 group-hover:opacity-0 transition duration-500 grayscale group-hover:grayscale-0">
+                <img src="https://raw.githubusercontent.com/burnttoast-p/gbook/refs/heads/main/진노의 날.png" class="absolute inset-0 w-full h-full rounded-lg shadow-2xl opacity-0 group-hover:opacity-100 transition duration-500 object-cover">
+            </div>
+        </section>
+
+        <section class="bg-zinc-900 border border-zinc-800 rounded-lg p-8 md:p-12 shadow-2xl relative overflow-hidden">
+            <div class="absolute top-0 right-0 w-64 h-64 bg-blood-700/5 rounded-full blur-3xl pointer-events-none"></div>
+            <div class="text-center space-y-4 mb-10 relative z-10">
+                <h2 class="text-3xl text-white font-serif border-b border-zinc-800 pb-4 inline-block px-8">세계관</h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-gray-300 leading-relaxed text-sm md:text-base relative z-10">
+                <div class="space-y-3">
+                    <h4 class="text-blood-500 font-bold font-serif text-lg">아르카디아 제국</h4>
+                    <p class="text-justify">실리보다는 화려함을 추구하는 인간 중심의 국가. 마왕성과의 수백 년 된 정전 협정으로 표면적인 평화를 유지 중이지만, 귀족 사회 내부는 암투와 부패가 만연해 있습니다. 마법과 검술이 모두 발달했으며, 인간 사회임에도 마족과의 무역 및 외교가 일상적으로 이루어집니다.</p>
+                </div>
+                <div class="space-y-3">
+                    <h4 class="text-blood-500 font-bold font-serif text-lg">마족 & 마왕성</h4>
+                    <p class="text-justify">모든 종족이 마법을 사용할 수 있으며 평균 수명이 1000년에 달하는 종족. 마왕을 정점으로 한 느슨한 계급 사회를 이루고 있습니다. 이름에서 연상되는 것과 달리 신화적 존재인 '악마'와는 다르며, 본성이 무조건 악하지 않아 인간 제국과의 교류가 진행되고 있습니다.</p>
+                </div>
+                <div class="space-y-3 md:col-span-2 mt-4 md:mt-2">
+                    <h4 class="text-blood-500 font-bold font-serif text-lg">리히트호펜 가문</h4>
+                    <p class="text-justify">장미와 유리 공예로 유명한 폐쇄적인 명문가. 외부와의 교류가 극히 적어 내부 사정을 아는 이가 드뭅니다. 항간에는 악마 숭배자나 음침한 곳이라는 소문이 돌며, 사용인들 사이에서는  기괴한 소문이 끊이지 않습니다.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-zinc-900 border border-zinc-800 rounded-lg p-8 md:p-12 shadow-2xl relative overflow-hidden">
+            <div class="absolute top-0 left-0 w-64 h-64 bg-blood-700/5 rounded-full blur-3xl pointer-events-none"></div>
+            
+            <div class="text-center space-y-4 mb-10 relative z-10">
+                <h2 class="text-3xl text-white font-serif border-b border-zinc-800 pb-4 inline-block px-8">저택 구조도</h2>
+                <p class="text-gray-400 mt-2">어둠이 내린 저택 안에서 길을 잃지 마십시오.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 relative z-10">
+                <div class="md:col-span-2 bg-zinc-950/50 p-6 rounded-lg border border-zinc-800/50 hover:border-zinc-700 transition-colors">
+                    <h4 class="text-blood-500 font-bold font-batang text-lg mb-2">본관 <span class="text-sm font-sans font-normal text-gray-500 ml-1">Main Building</span></h4>
+                    <p class="text-sm text-gray-400">장미정원 · 온실 · 집무실</p>
+                </div>
+                
+                <div class="bg-blood-900/10 p-6 rounded-lg border border-blood-700/40 hover:bg-blood-900/20 transition-colors">
+                    <h4 class="text-blood-500 font-bold font-batang text-lg mb-2">북관 <span class="text-sm font-sans font-normal text-blood-500/50 ml-1">North Wing</span></h4>
+                    <p class="text-sm text-blood-500 font-bold tracking-widest">※ 봉쇄구역</p>
+                </div>
+
+                <div class="bg-zinc-950/50 p-6 rounded-lg border border-zinc-800/50 hover:border-zinc-700 transition-colors">
+                    <h4 class="text-gray-300 font-bold font-batang text-lg mb-2">동관 <span class="text-sm font-sans font-normal text-gray-500 ml-1">East Wing</span></h4>
+                    <p class="text-sm text-gray-400">지하실</p>
+                </div>
+
+                <div class="bg-zinc-950/50 p-6 rounded-lg border border-zinc-800/50 hover:border-zinc-700 transition-colors">
+                    <h4 class="text-gray-300 font-bold font-batang text-lg mb-2">서관 <span class="text-sm font-sans font-normal text-gray-500 ml-1">West Wing</span></h4>
+                    <p class="text-sm text-gray-400">도서관 · 예배당</p>
+                </div>
+
+                <div class="bg-zinc-950/50 p-6 rounded-lg border border-zinc-800/50 hover:border-zinc-700 transition-colors">
+                    <h4 class="text-gray-300 font-bold font-batang text-lg mb-2">남관 <span class="text-sm font-sans font-normal text-gray-500 ml-1">South Wing</span></h4>
+                    <p class="text-sm text-gray-400">사용인 숙소</p>
+                </div>
             </div>
         </section>
 
         <section class="space-y-12">
             <div class="text-center space-y-4">
-                <h2 class="text-3xl md:text-4xl text-white font-serif">어둠을 품은 자들</h2>
+                <h2 class="text-3xl md:text-4xl text-white font-serif">리히트호펜 저택</h2>
                 <p class="text-gray-400">저택의 문을 열면 당신을 맞이할 이들입니다. 누구도 완전히 믿지 마십시오.</p>
             </div>
 
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                 
-                <div class="group relative overflow-hidden rounded-lg bg-zinc-900 border border-zinc-800 transition-all hover:-translate-y-2 hover:border-blood-700 hover:shadow-[0_0_20px_rgba(138,3,3,0.3)] cursor-pointer">
-                    <img src="https://placehold.co/400x500/1e1e24/ffffff?text=Bernhard" alt="베른하르트" class="w-full h-80 object-cover opacity-70 group-hover:opacity-100 transition-opacity">
+                <div onclick="openModal('Bernhard')" class="group relative overflow-hidden rounded-lg bg-zinc-900 border border-zinc-800 transition-all hover:-translate-y-2 hover:border-blood-700 hover:shadow-[0_0_20px_rgba(138,3,3,0.3)] cursor-pointer">
+                    <img src="https://raw.githubusercontent.com/burnttoast-p/gbook/refs/heads/main/베른하르트 프로필.png" alt="베른하르트" class="w-full aspect-[4/5] object-cover object-top opacity-70 group-hover:opacity-100 transition-opacity">
                     <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black via-black/80 to-transparent p-6 pt-12">
-                        <span class="text-xs text-blood-500 font-bold tracking-widest">저택의 가주</span>
-                        <h3 class="text-xl text-white font-serif mt-1">베른하르트</h3>
-                        <p class="text-sm text-gray-400 mt-2 line-clamp-2">"사라진 아내를 향한 지독한 순애와, 저택을 지배하는 서늘한 광기."</p>
+                        <span class="text-xs text-blood-500 font-bold tracking-widest font-batang">가주</span>
+                        <h3 class="text-xl text-white font-renaissance mt-1">베른하르트</h3>
+                        <p class="text-sm text-gray-400 mt-2 line-clamp-2">"죽은 자는 대답하지 않으니, 차라리……."</p>
                     </div>
                 </div>
 
-                <div class="group relative overflow-hidden rounded-lg bg-zinc-900 border border-zinc-800 transition-all hover:-translate-y-2 hover:border-blood-700 hover:shadow-[0_0_20px_rgba(138,3,3,0.3)] cursor-pointer">
-                    <img src="https://placehold.co/400x500/1e1e24/ffffff?text=Ayser" alt="아이저" class="w-full h-80 object-cover opacity-70 group-hover:opacity-100 transition-opacity">
+                <div onclick="openModal('Eiser')" class="group relative overflow-hidden rounded-lg bg-zinc-900 border border-zinc-800 transition-all hover:-translate-y-2 hover:border-blood-700 hover:shadow-[0_0_20px_rgba(138,3,3,0.3)] cursor-pointer">
+                    <img src="https://raw.githubusercontent.com/burnttoast-p/gbook/refs/heads/main/아이저 프로필.png" alt="아이저" class="w-full aspect-[4/5] object-cover object-top opacity-70 group-hover:opacity-100 transition-opacity">
                     <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black via-black/80 to-transparent p-6 pt-12">
-                        <span class="text-xs text-blood-500 font-bold tracking-widest">오만한 장남</span>
-                        <h3 class="text-xl text-white font-serif mt-1">아이저</h3>
-                        <p class="text-sm text-gray-400 mt-2 line-clamp-2">"다정한 미소 뒤에 숨겨진 열등감과, 당신을 옭아매는 교묘한 통제."</p>
+                        <span class="text-xs text-blood-500 font-bold tracking-widest font-batang">장남</span>
+                        <h3 class="text-xl text-white font-renaissance mt-1">아이저</h3>
+                        <p class="text-sm text-gray-400 mt-2 line-clamp-2">"제가 당신께 눈에 찬 적이, 과연 단 한 번이라도 있긴 합니까?"</p>
                     </div>
                 </div>
 
-                <div class="group relative overflow-hidden rounded-lg bg-zinc-900 border border-zinc-800 transition-all hover:-translate-y-2 hover:border-blood-700 hover:shadow-[0_0_20px_rgba(138,3,3,0.3)] cursor-pointer">
-                    <img src="https://placehold.co/400x500/1e1e24/ffffff?text=Eugen" alt="오이겐" class="w-full h-80 object-cover opacity-70 group-hover:opacity-100 transition-opacity">
+                <div onclick="openModal('Eugen')" class="group relative overflow-hidden rounded-lg bg-zinc-900 border border-zinc-800 transition-all hover:-translate-y-2 hover:border-blood-700 hover:shadow-[0_0_20px_rgba(138,3,3,0.3)] cursor-pointer">
+                    <img src="https://raw.githubusercontent.com/burnttoast-p/gbook/refs/heads/main/오이겐 프로필.png" alt="오이겐" class="w-full aspect-[4/5] object-cover object-top opacity-70 group-hover:opacity-100 transition-opacity">
                     <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black via-black/80 to-transparent p-6 pt-12">
-                        <span class="text-xs text-blood-500 font-bold tracking-widest">밤을 걷는 차남</span>
-                        <h3 class="text-xl text-white font-serif mt-1">오이겐</h3>
-                        <p class="text-sm text-gray-400 mt-2 line-clamp-2">"까칠한 겉모습 속, 이 기이한 가문에서 유일하게 온기를 간직한 자."</p>
+                        <span class="text-xs text-blood-500 font-bold tracking-widest font-batang">차남</span>
+                        <h3 class="text-xl text-white font-renaissance mt-1">오이겐</h3>
+                        <p class="text-sm text-gray-400 mt-2 line-clamp-2">"네, 네, 난 형님한텐 늘 눈엣가시지. 누가 모른대?"</p>
                     </div>
                 </div>
 
-                <div class="group relative overflow-hidden rounded-lg bg-zinc-900 border border-zinc-800 transition-all hover:-translate-y-2 hover:border-blood-700 hover:shadow-[0_0_20px_rgba(138,3,3,0.3)] cursor-pointer">
-                    <img src="https://placehold.co/400x500/1e1e24/ffffff?text=Isabella" alt="이사벨라" class="w-full h-80 object-cover opacity-70 group-hover:opacity-100 transition-opacity">
+                <div onclick="openModal('Isabella')" class="group relative overflow-hidden rounded-lg bg-zinc-900 border border-zinc-800 transition-all hover:-translate-y-2 hover:border-blood-700 hover:shadow-[0_0_20px_rgba(138,3,3,0.3)] cursor-pointer">
+                    <img src="https://raw.githubusercontent.com/burnttoast-p/gbook/refs/heads/main/이사벨라 프로필.png" alt="이사벨라" class="w-full aspect-[4/5] object-cover object-top opacity-70 group-hover:opacity-100 transition-opacity">
                     <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black via-black/80 to-transparent p-6 pt-12">
-                        <span class="text-xs text-blood-500 font-bold tracking-widest">장미정원의 마녀</span>
-                        <h3 class="text-xl text-white font-serif mt-1">이사벨라</h3>
-                        <p class="text-sm text-gray-400 mt-2 line-clamp-2">"모든 진실을 꿰뚫어 보는 무심하고 냉소적인 방관자."</p>
+                        <span class="text-xs text-blood-500 font-bold tracking-widest font-batang">장녀</span>
+                        <h3 class="text-xl text-white font-renaissance mt-1">이사벨라</h3>
+                        <p class="text-sm text-gray-400 mt-2 line-clamp-2">"날 무어라고 부르든 상관 없어요. 방해만 않는다면."</p>
                     </div>
                 </div>
 
-                <div class="group relative overflow-hidden rounded-lg bg-zinc-900 border border-zinc-800 transition-all hover:-translate-y-2 hover:border-blood-700 hover:shadow-[0_0_20px_rgba(138,3,3,0.3)] cursor-pointer">
-                    <img src="https://placehold.co/400x500/1e1e24/ffffff?text=Stefan" alt="슈테판" class="w-full h-80 object-cover opacity-70 group-hover:opacity-100 transition-opacity">
+                <div onclick="openModal('Stefan')" class="group relative overflow-hidden rounded-lg bg-zinc-900 border border-zinc-800 transition-all hover:-translate-y-2 hover:border-blood-700 hover:shadow-[0_0_20px_rgba(138,3,3,0.3)] cursor-pointer">
+                    <img src="https://raw.githubusercontent.com/burnttoast-p/gbook/refs/heads/main/슈테판 프로필.png" alt="슈테판" class="w-full aspect-[4/5] object-cover object-top opacity-70 group-hover:opacity-100 transition-opacity">
                     <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black via-black/80 to-transparent p-6 pt-12">
-                        <span class="text-xs text-blood-500 font-bold tracking-widest">그림자를 두른 소년</span>
-                        <h3 class="text-xl text-white font-serif mt-1">슈테판</h3>
-                        <p class="text-sm text-gray-400 mt-2 line-clamp-2">"감정 없는 인형. 그의 눈을 너무 오랫동안 들여다보지 마십시오."</p>
+                        <span class="text-xs text-blood-500 font-bold tracking-widest font-batang">삼남</span>
+                        <h3 class="text-xl text-white font-renaissance mt-1">슈테판</h3>
+                        <p class="text-sm text-gray-400 mt-2 line-clamp-2">"그 반응……. 꽤 재미있군요. 더 보여주시겠습니까?"</p>
                     </div>
                 </div>
 
-                <div class="group relative overflow-hidden rounded-lg bg-zinc-900 border border-zinc-800 transition-all hover:-translate-y-2 hover:border-blood-700 hover:shadow-[0_0_20px_rgba(138,3,3,0.3)] cursor-pointer">
-                    <img src="https://placehold.co/400x500/1e1e24/ffffff?text=Ernst" alt="에른스트" class="w-full h-80 object-cover opacity-70 group-hover:opacity-100 transition-opacity">
+                <div onclick="openModal('Ernst')" class="group relative overflow-hidden rounded-lg bg-zinc-900 border border-zinc-800 transition-all hover:-translate-y-2 hover:border-blood-700 hover:shadow-[0_0_20px_rgba(138,3,3,0.3)] cursor-pointer">
+                    <img src="https://raw.githubusercontent.com/burnttoast-p/gbook/refs/heads/main/에른스트 프로필.png" alt="에른스트" class="w-full aspect-[4/5] object-cover object-top opacity-70 group-hover:opacity-100 transition-opacity">
                     <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black via-black/80 to-transparent p-6 pt-12">
-                        <span class="text-xs text-blood-500 font-bold tracking-widest">어둠을 두려워하는 반쪽</span>
-                        <h3 class="text-xl text-white font-serif mt-1">에른스트</h3>
-                        <p class="text-sm text-gray-400 mt-2 line-clamp-2">"저택의 기이한 공기에 숨죽이며 살아가는, 가장 여리고 예민한 영혼."</p>
+                        <span class="text-xs text-blood-500 font-bold tracking-widest font-batang">사남</span>
+                        <h3 class="text-xl text-white font-renaissance mt-1">에른스트</h3>
+                        <p class="text-sm text-gray-400 mt-2 line-clamp-2">"슈, 슈테판……! 같이 가자고 했잖아……!"</p>
                     </div>
                 </div>
 
-                <div class="group relative overflow-hidden rounded-lg bg-zinc-900 border border-zinc-800 transition-all hover:-translate-y-2 hover:border-blood-700 hover:shadow-[0_0_20px_rgba(138,3,3,0.3)] cursor-pointer">
-                    <img src="https://placehold.co/400x500/1e1e24/ffffff?text=Rosheen" alt="로신" class="w-full h-80 object-cover opacity-70 group-hover:opacity-100 transition-opacity">
+                <div onclick="openModal('Rosin')" class="group relative overflow-hidden rounded-lg bg-zinc-900 border border-zinc-800 transition-all hover:-translate-y-2 hover:border-blood-700 hover:shadow-[0_0_20px_rgba(138,3,3,0.3)] cursor-pointer">
+                    <img src="https://raw.githubusercontent.com/burnttoast-p/gbook/refs/heads/main/로신 프로필.png" alt="로신" class="w-full aspect-[4/5] object-cover object-top opacity-70 group-hover:opacity-100 transition-opacity">
                     <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black via-black/80 to-transparent p-6 pt-12">
-                        <span class="text-xs text-blood-500 font-bold tracking-widest">비밀의 문을 두드리는 메이드</span>
-                        <h3 class="text-xl text-white font-serif mt-1">로신</h3>
-                        <p class="text-sm text-gray-400 mt-2 line-clamp-2">"무거운 공기 속에서도 발랄함을 잃지 않는, 진실을 모르는 이방인."</p>
+                        <span class="text-xs text-blood-500 font-bold tracking-widest font-batang">메이드</span>
+                        <h3 class="text-xl text-white font-renaissance mt-1">로신</h3>
+                        <p class="text-sm text-gray-400 mt-2 line-clamp-2">"그 소문 들으셨어요?! 글쎄, 저택에서……. 앗, 비밀이랬던가?"</p>
                     </div>
                 </div>
 
-                <div class="group relative overflow-hidden rounded-lg bg-zinc-900 border border-zinc-800 transition-all hover:-translate-y-2 hover:border-blood-700 hover:shadow-[0_0_20px_rgba(138,3,3,0.3)] cursor-pointer">
-                    <img src="https://placehold.co/400x500/1e1e24/ffffff?text=Kai" alt="카이" class="w-full h-80 object-cover opacity-70 group-hover:opacity-100 transition-opacity">
+                <div onclick="openModal('Kai')" class="group relative overflow-hidden rounded-lg bg-zinc-900 border border-zinc-800 transition-all hover:-translate-y-2 hover:border-blood-700 hover:shadow-[0_0_20px_rgba(138,3,3,0.3)] cursor-pointer">
+                    <img src="https://raw.githubusercontent.com/burnttoast-p/gbook/refs/heads/main/카이 프로필.png" alt="카이" class="w-full aspect-[4/5] object-cover object-top opacity-70 group-hover:opacity-100 transition-opacity">
                     <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black via-black/80 to-transparent p-6 pt-12">
-                        <span class="text-xs text-blood-500 font-bold tracking-widest">유희를 좇는 객원</span>
-                        <h3 class="text-xl text-white font-serif mt-1">카이</h3>
-                        <p class="text-sm text-gray-400 mt-2 line-clamp-2">"흥미본위로 이 파멸적인 연극을 지켜보는, 비밀을 감춘 마계의 손님."</p>
+                        <span class="text-xs text-blood-500 font-bold tracking-widest font-batang">객원 고문</span>
+                        <h3 class="text-xl text-white font-renaissance mt-1">카이</h3>
+                        <p class="text-sm text-gray-400 mt-2 line-clamp-2">"하하, 이 저택은 정말이지 지루할 틈이 없군요."</p>
                     </div>
                 </div>
 
@@ -167,14 +299,178 @@
         <div class="h-20 md:h-0"></div>
     </main>
 
-    <div class="fixed bottom-0 left-0 w-full p-4 z-50 bg-gradient-to-t from-zinc-950 via-zinc-950 to-transparent md:static md:bg-none md:p-0 md:flex md:justify-center md:pb-24 pointer-events-none">
-        <button class="pointer-events-auto w-full md:w-auto bg-blood-700 hover:bg-blood-500 text-white font-serif font-bold text-lg py-4 px-12 rounded-lg shadow-[0_0_30px_rgba(138,3,3,0.5)] transition-all transform hover:scale-105 active:scale-95 flex justify-center items-center gap-2">
-            저택의 문 열기
+    <div class="fixed bottom-0 left-0 w-full p-4 z-40 bg-gradient-to-t from-zinc-950 via-zinc-950 to-transparent md:static md:bg-none md:p-0 md:flex md:justify-center md:pb-24 pointer-events-none">
+        <a href="https://share.crack.wrtn.ai/b43z9i" target="_blank" class="pointer-events-auto w-full md:w-auto bg-blood-700 hover:bg-blood-500 text-white font-serif font-bold text-lg py-4 px-12 rounded-lg shadow-[0_0_30px_rgba(138,3,3,0.5)] transition-all transform hover:scale-105 active:scale-95 flex justify-center items-center gap-2">
+            WELCOME
             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
                 <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
             </svg>
-        </button>
+        </a>
     </div>
 
+    <div id="charModal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm opacity-0 transition-opacity duration-300">
+        <div class="absolute inset-0 cursor-pointer" onclick="closeModal()"></div>
+        
+        <div id="modalContent" class="bg-zinc-900 border border-zinc-700 rounded-xl w-full max-w-4xl max-h-[90vh] overflow-hidden flex flex-col md:flex-row relative shadow-[0_0_40px_rgba(138,3,3,0.3)] transform scale-95 transition-transform duration-300 z-10">
+            <button onclick="closeModal()" class="absolute top-4 right-4 z-20 text-gray-400 hover:text-white bg-zinc-900/60 rounded-full p-2 backdrop-blur-sm transition-colors">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+            </button>
+            
+            <div class="w-full md:w-2/5 h-64 md:h-auto relative shrink-0">
+                <img id="modalImg" src="" alt="캐릭터 상세 이미지" class="absolute inset-0 w-full h-full object-cover object-top">
+                <div class="absolute inset-0 bg-gradient-to-t from-zinc-900 to-transparent md:hidden"></div>
+            </div>
+            
+            <div class="w-full md:w-3/5 p-6 md:p-8 overflow-y-auto">
+                <span id="modalSubtitle" class="text-blood-500 font-bold tracking-widest text-sm font-batang"></span>
+                <h2 id="modalName" class="text-3xl text-white font-renaissance mt-2 mb-6 border-b border-zinc-800 pb-4"></h2>
+                
+                <div class="space-y-4 text-gray-300">
+                    <p id="modalDesc" class="italic text-gray-400 border-l-4 border-blood-700 pl-4 mb-6 leading-relaxed"></p>
+                    
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm bg-zinc-950 p-4 rounded-lg border border-zinc-800">
+                        <div><span class="text-gray-500 block mb-1">나이</span><span id="modalAge" class="text-white font-medium"></span></div>
+                        <div><span class="text-gray-500 block mb-1">신장</span><span id="modalHeight" class="text-white font-medium"></span></div>
+                        <div><span class="text-gray-500 block mb-1">MBTI</span><span id="modalMbti" class="text-white font-medium"></span></div>
+                        <div><span class="text-gray-500 block mb-1">종족</span><span id="modalOrigin" class="text-white font-medium"></span></div>
+                    </div>
+                    
+                    <div class="space-y-4 mt-6">
+                        <div class="bg-zinc-950/50 p-4 rounded-lg">
+                            <span class="inline-block text-blood-500 text-sm font-bold mb-2">선호 (好)</span>
+                            <p id="modalLikes" class="text-sm text-gray-400"></p>
+                        </div>
+                        <div class="bg-zinc-950/50 p-4 rounded-lg">
+                            <span class="inline-block text-gray-500 text-sm font-bold mb-2">불호 (惡)</span>
+                            <p id="modalDislikes" class="text-sm text-gray-400"></p>
+                        </div>
+                        <div class="bg-zinc-950/50 p-4 rounded-lg">
+                            <span class="inline-block text-white text-sm font-bold mb-2">TMI</span>
+                            <p id="modalTmi" class="text-sm text-gray-400 leading-relaxed"></p>
+                        </div>
+                        <div id="modalAdultBox" class="bg-zinc-950/50 p-4 rounded-lg border border-blood-900/40 hidden">
+                            <span class="inline-block text-blood-500 text-sm font-bold mb-2">19+</span>
+                            <p id="modalAdult" class="text-sm text-gray-400 leading-relaxed"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const charData = {
+            'Bernhard': {
+                title: '가주', name: '베른하르트 폰 리히트호펜', age: '54세', height: '189cm', mbti: 'ISTJ', origin: '인간',
+                desc: '리히트호펜 가의 가주. 과묵하고 위압적인 인상 뒤에 11년 전 세상을 떠난 아내를 향한 집념을 감추고 있습니다.',
+                likes: '정적, 아내의 유품(목걸이), 붉은 장미, 에스프레소', dislikes: '가문의 명예 훼손, 소음, 변화, 단맛',
+                tmi: '11년 전 아내(크림힐트)와 사별했습니다. 차갑고 무심해 보이지만 의외로 가족을 아낍니다.',
+                secret: '[경험] 아내와의 경험이 전부\n[성향] 대디 / 도미넌트\n[선호] 부드럽고 느릿한 스킨십, 정서적 교감, 통제',
+                img: 'https://raw.githubusercontent.com/burnttoast-p/gbook/refs/heads/main/베른하르트 프로필.png'
+            },
+            'Eiser': {
+                title: '장남', name: '아이저 폰 리히트호펜', age: '29세', height: '184cm', mbti: 'ISTJ', origin: '인간',
+                desc: '리히트호펜 가의 장남이자, 고인이 된 백작부인을 가장 빼닮은 아들. 단정하고 사무적인 다정함 아래 아버지의 인정을 향한 비뚤어진 갈망이 서려 있습니다.',
+                likes: '인정받는 것, 담백한 디저트, 통제된 상황', dislikes: '오이겐, 동정받는 것, 무능, 길거리 음식',
+                tmi: '배색(머리&눈)을 제외하면 죽은 백작부인을 가장 많이 닮았습니다. 또한, 의도적으로 아버지의 스타일을 따라 하고 있습니다.',
+                secret: '[경험] 적음\n[성향] 사디스트 / 도미넌트\n[선호] 수치심 유발, 우위 확인, 언어적 굴복 요구',
+                img: 'https://raw.githubusercontent.com/burnttoast-p/gbook/refs/heads/main/아이저 프로필.png'
+            },
+            'Eugen': {
+                title: '차남', name: '오이겐 폰 리히트호펜', age: '25세', height: '186cm', mbti: 'INFP', origin: '인간',
+                desc: '리히트호펜 가의 차남. 까칠한 입과 달리 누구보다 가족을 아끼며, 자신의 유능함을 일부러 감추고 사는 자유로운 영혼입니다.',
+                likes: '밤 산책, 소동물, 고기 스튜, 가족', dislikes: '가식, 허례허식, 먹기 번거로운 코스 요리',
+                tmi: '장남인 아이저보다 조금 더 유능하지만, 본인은 이를 필사적으로 숨기고 싶어 합니다. 밤 산책길에 길고양이 밥을 챙겨주는 비밀 아지트가 있습니다.',
+                secret: '[경험] 없음\n[성향] 스위치\n[선호] 상호 교감, 약간 거친 스킨십, 주도권 뺏고 뺏기기',
+                img: 'https://raw.githubusercontent.com/burnttoast-p/gbook/refs/heads/main/오이겐 프로필.png'
+            },
+            'Isabella': {
+                title: '장녀', name: '이사벨라 폰 리히트호펜', age: '24세', height: '159cm', mbti: 'INTJ', origin: '인간',
+                desc: '리히트호펜 가의 장녀. 냉소적인 시선과 논리적인 사고로 무장한 채 서재에 틀어박혀 있으며, 작위 따위에는 눈길조차 주지 않습니다.',
+                likes: '서재, 빗소리, 장미, 홍차, 말린 과일', dislikes: '소란, 무논리, 방해받는 것, 기름진 것',
+                tmi: '저택 내에서 진짜 마녀가 아니냐는 소문이 돌지만 사실이 아닙니다. 약초 채집을 취미로 삼고 있습니다.',
+                secret: '[경험] 없음\n[성향] 소프트돔\n[선호] 정신적 지배, 명령, 관찰형 방치',
+                img: 'https://raw.githubusercontent.com/burnttoast-p/gbook/refs/heads/main/이사벨라 프로필.png'
+            },
+            'Stefan': {
+                title: '삼남', name: '슈테판 폰 리히트호펜', age: '12세', height: '145cm', mbti: 'INTP', origin: '인간',
+                desc: '리히트호펜 가의 쌍둥이 중 형. 또래답지 않게 서늘한 침묵을 두르고 있으며, 그 무표정 너머에 무엇이 있는지는 아무도 모릅니다.',
+                likes: '타인의 공포감, 꼭두각시 인형, 레어 스테이크', dislikes: '지루함, 소음, 웰던으로 조리된 육류',
+                tmi: '벌레나 작은 동물을 해부하는 섬뜩한 취미를 가지고 있습니다.',
+                img: 'https://raw.githubusercontent.com/burnttoast-p/gbook/refs/heads/main/슈테판 프로필.png'
+            },
+            'Ernst': {
+                title: '사남', name: '에른스트 폰 리히트호펜', age: '12세', height: '145cm', mbti: 'INFP', origin: '인간',
+                desc: '리히트호펜 가의 쌍둥이 중 동생. 겁이 많고 소심하지만 가족 곁에 있을 때만큼은 안심하며, 쌍둥이 형에게 기대어 하루를 버팁니다.',
+                likes: '포근한 것, 따뜻한 우유, 소동물, 가족', dislikes: '어둠, 갑작스러운 큰 소리, 쓴 것',
+                tmi: '쌍둥이 형제인 슈테판이 어딘가 기묘하고 이상하다고 느끼면서도, 유일한 반쪽이기 때문에 그에게 강하게 의존하고 있습니다.',
+                img: 'https://raw.githubusercontent.com/burnttoast-p/gbook/refs/heads/main/에른스트 프로필.png'
+            },
+            'Rosin': {
+                title: '메이드', name: '로신 캐시디', age: '21세', height: '162cm', mbti: 'ENFP', origin: '인간',
+                desc: '타국 출신의 메이드. 저택의 음침한 분위기와는 정반대로 밝고 쾌활합니다.',
+                likes: '귀여운 것, 단 단 것, 티타임, 소문', dislikes: '벌레, 어둠, 유령, 흑빵',
+                tmi: '리히트호펜 저택 내에 은밀하게 돌아다니는 모든 소문과 정보의 근원이자, 가장 빠른 소식통입니다.',
+                secret: '[경험] 없음\n[선호] 위압 당하는 것, 칭찬받기',
+                img: 'https://raw.githubusercontent.com/burnttoast-p/gbook/refs/heads/main/로신 프로필.png'
+            },
+            'Kai': {
+                title: '객원 고문', name: '카이 폰 하르트만', age: '177세', height: '185cm', mbti: 'ESFP', origin: '마족',
+                desc: '리히트호펜 가에 머무는 마족 객원 고문. 능글맞은 미소와 도발적인 언사로 주변을 휘젓고 다닙니다.',
+                likes: '변칙성, 독한 술, 장난, 향신료 들어간 음식', dislikes: '지루함, 위선, 타인의 통제나 명령, 밍밍한 맛',
+                tmi: '마계 유력 귀족가의 삼남이며, 둘째 형은 마왕성의 시종장입니다. 본래 머리에 검은 뿔이 있으나 마법으로 숨기고 다니며, 감정이 격해지면 마법이 풀려 뿔이 드러납니다.',
+                secret: '[경험] 많음\n[성향] 도미넌트 / 스위치\n[선호] 티징, 감각 통제, 애태우기',
+                img: 'https://raw.githubusercontent.com/burnttoast-p/gbook/refs/heads/main/카이 프로필.png'
+            }
+        };
+
+        function openModal(charId) {
+            const modal = document.getElementById('charModal');
+            const content = document.getElementById('modalContent');
+            const data = charData[charId];
+
+            if(!data) return;
+
+            document.getElementById('modalImg').src = data.img;
+            document.getElementById('modalSubtitle').textContent = data.title;
+            document.getElementById('modalName').textContent = data.name;
+            document.getElementById('modalDesc').textContent = data.desc;
+            document.getElementById('modalAge').textContent = data.age;
+            document.getElementById('modalHeight').textContent = data.height;
+            document.getElementById('modalMbti').textContent = data.mbti;
+            document.getElementById('modalOrigin').textContent = data.origin;
+            document.getElementById('modalLikes').textContent = data.likes;
+            document.getElementById('modalDislikes').textContent = data.dislikes;
+            document.getElementById('modalTmi').textContent = data.tmi;
+
+            const adultBox = document.getElementById('modalAdultBox');
+            if (data.secret) {
+                document.getElementById('modalAdult').innerHTML = data.secret.replace(/\n/g, '<br>');
+                adultBox.classList.remove('hidden');
+            } else {
+                adultBox.classList.add('hidden');
+            }
+
+            modal.classList.remove('hidden');
+            void modal.offsetWidth; 
+            modal.classList.remove('opacity-0');
+            content.classList.remove('scale-95');
+            
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('charModal');
+            const content = document.getElementById('modalContent');
+
+            modal.classList.add('opacity-0');
+            content.classList.add('scale-95');
+
+            setTimeout(() => {
+                modal.classList.add('hidden');
+                document.body.style.overflow = '';
+            }, 300);
+        }
+    </script>
 </body>
 </html>
